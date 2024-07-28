@@ -1,0 +1,60 @@
+<p>CodeChef Assignment!</p>
+
+<form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" novalidate>
+  <div>
+    <label for="firstName">First Name:</label><br>
+    <input type="text" id="firstName" name="firstName" ngModel required>
+    <div *ngIf="userForm.submitted && userForm.controls['firstName']?.errors?.['required']">
+      First Name is required.
+    </div><br><br>
+  </div>
+  <div>
+    <label for="userName">User Name:</label><br>
+    <input type="text" id="userName" name="userName" ngModel required>
+    <div *ngIf="userForm.submitted && userForm.controls['userName']?.errors?.['required']">
+      User Name is required.
+    </div><br><br>
+  </div>
+  <div>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" ngModel required>
+    <div *ngIf="userForm.submitted && userForm.controls['password']?.errors?.['required']">
+      Password is required.
+    </div><br><br>
+  </div>
+  <div>
+    <label for="confirmPassword">Confirm Password:</label><br>
+    <input type="password" id="confirmPassword" name="confirmPassword" ngModel required>
+    <div *ngIf="userForm.submitted && userForm.controls['confirmPassword']?.errors?.['required']">
+      Confirm Password is required.
+    </div>
+    <div *ngIf="userForm.submitted && userForm.value.password !== userForm.value.confirmPassword">
+      Passwords do not match.
+    </div><br><br>
+  </div>
+  <div>
+    <label for="mobileNo">Mobile No:</label><br>
+    <input type="text" id="mobileNo" name="mobileNo" ngModel required pattern="^\d{10}$">
+    <div *ngIf="userForm.submitted && userForm.controls['mobileNo']?.errors?.['required']">
+      Mobile Number is required.
+    </div>
+    <div *ngIf="userForm.submitted && userForm.controls['mobileNo']?.errors?.['pattern']">
+      Mobile Number should be 10 digits.
+    </div><br><br>
+  </div>
+  <div>
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob" ngModel required (change)="calculateAge(userForm)">
+    <div *ngIf="userForm.submitted && userForm.controls['dob']?.errors?.['required']">
+      Date of Birth is required.
+    </div><br><br>
+  </div>
+  <div>
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" ngModel required [readonly]="true" [value]="age">
+    <div *ngIf="userForm.submitted && age > 100">
+      Age should not be more than 100.
+    </div><br><br>
+  </div>
+  <button type="submit" id="submit" class="submit">Submit</button>
+</form>
