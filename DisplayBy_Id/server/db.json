@@ -1,0 +1,46 @@
+{
+  "info": [
+    {
+      "id": 1,
+      "name": "Raghav",
+      "age": 25,
+      "phone": 9487926789
+    },
+    {
+      "id": 2,
+      "name": "Savi",
+      "age": 40,
+      "phone": 9458234576
+    },
+    {
+      "id": 3,
+      "name": "Mira",
+      "age": 30,
+      "phone": 9845632178
+    },
+    {
+      "id": 4,
+      "name": "Harsh",
+      "age": 22,
+      "phone": 8888576912
+    },
+    {
+      "id": 5,
+      "name": "Priya",
+      "age": 35,
+      "phone": 9945687215
+    },
+    {
+      "id": 6,
+      "name": "Sneha",
+      "age": 35,
+      "phone": 9985637215
+    },
+    {
+      "id": 7,
+      "name": "Lata",
+      "age": 35,
+      "phone": 9945687215
+    }
+  ]
+}
